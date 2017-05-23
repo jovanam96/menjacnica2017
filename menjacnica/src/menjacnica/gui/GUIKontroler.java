@@ -9,10 +9,11 @@ import javax.swing.JOptionPane;
 
 import menjacnica.Menjacnica;
 import menjacnica.Valuta;
+import menjacnica.interfejsi.MenjacnicaInterface;
 
 public class GUIKontroler {
 	private static MenjacnicaGUI frame;
-	private static Menjacnica sistem;
+	private static MenjacnicaInterface sistem;
 	
 	private static DodajKursGUI dodajKurs;
 	private static ObrisiKursGUI obrisiKurs;
@@ -33,20 +34,20 @@ public class GUIKontroler {
 	}
 
 	public static void prikaziDodajKursGUI() {
-		dodajKurs = new DodajKursGUI(frame);
+		dodajKurs = new DodajKursGUI();
 		dodajKurs.setLocationRelativeTo(null);
 		dodajKurs.setVisible(true);
 	}
 
 	public static void prikaziObrisiKursGUI(Valuta valuta) {
-		obrisiKurs = new ObrisiKursGUI(frame, valuta);
+		obrisiKurs = new ObrisiKursGUI(valuta);
 		obrisiKurs.setLocationRelativeTo(frame);
 		obrisiKurs.setVisible(true);
 		
 	}
 
 	public static void prikaziIzvrsiZamenuGUI(Valuta valuta) {
-		izvrsiZamenu = new IzvrsiZamenuGUI(frame, valuta);
+		izvrsiZamenu = new IzvrsiZamenuGUI(valuta);
 		izvrsiZamenu.setLocationRelativeTo(frame);
 		izvrsiZamenu.setVisible(true);
 	}
